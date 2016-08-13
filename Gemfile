@@ -15,13 +15,14 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen', '~> 3.0.5'
+  gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console'
 end
 
 group :test do
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner', '~> 1.5.3'
 end
