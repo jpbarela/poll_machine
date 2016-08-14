@@ -1,24 +1,17 @@
-# README
+# Poll Machine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Summary 
+Poll machine is an app for generating simple polls. It supports user logon and anonymous polls.
 
-Things you may want to cover:
+## Dependencies 
+Poll Machine relies on Postgres and Redis. Make sure both are running on your local machine before starting Poll 
+Machine. 
 
-* Ruby version
+## Installation
+To install Poll Machine:
+1. Clone the Repo
+2. Run ``bundle install``
+3. Run ``rake db:setup``
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment
+Poll Machine is deployed to Heroku at pollmachine.herokuapp.com. 
