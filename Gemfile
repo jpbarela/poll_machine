@@ -31,3 +31,5 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
+
+ruby "2.2.5"
