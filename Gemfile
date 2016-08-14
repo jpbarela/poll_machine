@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'foundation-rails'
+gem 'haml'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -15,6 +17,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'haml_lint'
   gem 'listen', '~> 3.0.5'
   gem 'rubocop'
   gem 'spring'
@@ -25,4 +28,6 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner', '~> 1.5.3'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
