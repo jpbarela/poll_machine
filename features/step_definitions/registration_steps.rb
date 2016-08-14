@@ -17,7 +17,7 @@ end
 
 Then(/^I am registered on with Poll Machine$/) do
   url = URI.parse(current_url)
-  expect(url.path).to match(/users\/[\d]+/)
+  expect(url.path).to match(%r{users\/[\d]+})
 end
 
 Then(/^I receive an error notice$/) do

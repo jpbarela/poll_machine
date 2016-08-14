@@ -32,4 +32,4 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-ruby "2.2.5"
+ruby '2.2.5'
