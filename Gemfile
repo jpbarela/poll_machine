@@ -6,6 +6,7 @@ gem 'haml', '~> 4.0.3'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'redis-rails', '~> 5.0.1'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
@@ -13,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '~> 4.1.1'
 
 group :development, :test do
+  gem 'dotenv', '~> 2.1.1'
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'pry-byebug', '~> 3.2.0'
 end
