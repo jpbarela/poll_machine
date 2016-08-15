@@ -30,5 +30,5 @@ end
 Then(/^I receive an error notice$/) do
   url = URI.parse(current_url)
   expect(url.path).to match(new_user_path)
-  expect(page).to have_css ('.callout.alert')
+  expect(page).to have_css '.callout.alert'
 end

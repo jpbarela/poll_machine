@@ -3,5 +3,5 @@ Given(/^I am on the home page$/) do
 end
 
 Given(/^I am on the registration page$/) do
-  visit new_user_path 
+  visit new_user_path
 end
