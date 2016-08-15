@@ -3,23 +3,32 @@ When(/^I click the registration page$/) do
 end
 
 When(/^I fill out the registration form$/) do
-  fill_in 'user_email', with: 'test_cucumber@example.com'
-  fill_in 'user_first_name', with: 'Cucumber'
-  fill_in 'user_last_name', with: 'User'
-  fill_in 'user_password', with: 'password'
-  fill_in 'user_password_confirmation', with: 'password'
+  user = FactoryGirl.build :user
+  fill_in 'user_email', with: user.email
+  fill_in 'user_first_name', with: user.first_name
+  fill_in 'user_last_name', with: user.last_name
+  fill_in 'user_password', with: user.password
+  fill_in 'user_password_confirmation', with: user.password_confirmation
   click_button 'registration-submit'
 end
 
 When(/^I fill out the registration form incorrectly$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  user = FactoryGirl.build :user
+  fill_in 'user_email', with: user.email
+  fill_in 'user_first_name', with: user.first_name
+  fill_in 'user_last_name', with: user.last_name
+  fill_in 'user_password', with: user.password
+  fill_in 'user_password_confirmation', with: user.password.upcase
+  click_button 'registration-submit'
 end
 
 Then(/^I am registered on with Poll Machine$/) do
   url = URI.parse(current_url)
-  expect(url.path).to match(/users\/[\d]+/)
+  expect(url.path).to match(%r{users\/[\d]+})
 end
 
 Then(/^I receive an error notice$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  url = URI.parse(current_url)
+  expect(url.path).to match(new_user_path)
+  expect(page).to have_css '.callout.alert'
 end
