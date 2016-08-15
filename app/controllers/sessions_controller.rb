@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by email: params[:user][:email]
-    if user && user.authenticate(params[:user][:password])
-      log_in(user)
+    user_params = params[:user]
+    submitted_email = user_params[:email]
+    user = User.find_by email: submitted_email
+    if user && user.authenticate(user_params[:password])
+      log_in user
       redirect_to user_path user
     else
-      flash[:alert] = ['Could not log in please try again']
-      session[:login_email] = params[:user][:email]
+      save_login_errors(submitted_email)
       redirect_to new_session_path
     end
   end
@@ -18,5 +19,12 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new(email: session[:login_email])
+  end
+
+  private
+
+  def save_login_errors(submitted_email)
+    flash[:alert] = ['Could not log in please try again']
+    session[:login_email] = submitted_email
   end
 end
