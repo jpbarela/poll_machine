@@ -14,15 +14,14 @@
   %body
     .row
       - if logged_in?
-        .small-2.small-offset-8.medium-1.medium-offset-9
+        .small-2.small-offset-7.medium-2.medium-offset-8.columns
           = link_to current_user_first_name, user_path(current_user_id)
-        .small-2.medium-1
+        .small-2.medium-2.columns
           = link_to 'Logout', logout_path
       - else
-        .small-2.small-offset-8.medium-1.medium-offset-9
+        .small-2.small-offset-7.medium-2.medium-offset-8.columns
           =link_to 'Sign Up!', new_user_path
-        .small-2.medium-1
+        .small-2.medium-2.columns
           =link_to 'Login', new_session_path
 
-    .row
-      = yield
+    = yield
