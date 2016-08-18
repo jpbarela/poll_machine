@@ -1,0 +1,7 @@
+.row
+  %h1 Take a Poll!
+
+- @polls.each do |poll|
+  .row
+    .small-offset-2.small-10.columns
+      = link_to poll.name, poll_path(poll)
