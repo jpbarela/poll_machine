@@ -20,7 +20,7 @@ RSpec.describe SessionsHelper do
   end
 
   describe '#log_in' do
-    let(:user) { FactoryGirl.create :user}
+    let(:user) { FactoryGirl.create :user }
 
     before { log_in user }
 

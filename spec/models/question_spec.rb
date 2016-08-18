@@ -7,6 +7,6 @@ RSpec.describe Question do
   # Validations
 
   # Associations
-  it { is_expected.to belong_to :poll}
+  it { is_expected.to belong_to :poll }
   it { is_expected.to have_many :choices }
 end

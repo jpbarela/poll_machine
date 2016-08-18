@@ -25,7 +25,7 @@ When(/^I fill out the poll$/) do
 end
 
 Then(/^My answers should be recorded$/) do
-  expect{ click_button('poll-submit') }.to change{Response.count}.by(1)
+  expect { click_button('poll-submit') }.to change { Response.count }.by(1)
   created_response = Response.last
   expect(created_response.choices.size).to be @poll.questions.size
   choice_array = @poll.questions.map { |question| question.choices.last }
