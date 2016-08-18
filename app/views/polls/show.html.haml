@@ -1,0 +1,16 @@
+.row
+  %h1= @poll.name
+
+= form_tag responses_path do
+  = hidden_field_tag 'poll_id', @poll.id
+  - @poll.questions.each do |question|
+    .row
+      %fieldset.small-12.medium-8.medium-offset-2.columns
+        %legend= question.text
+        - question.choices.each do |choice|
+          = radio_button_tag "question_#{question.id}", choice.id
+          = label_tag choice.id, choice.value
+
+  .row
+    .small-12.medium-8.medium-offset-2.columns
+      = submit_tag 'Answer Poll', id: 'poll-submit', class: 'button'

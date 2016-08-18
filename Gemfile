@@ -17,6 +17,7 @@ group :development, :test do
   gem 'dotenv', '~> 2.1.1'
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'pry-byebug', '~> 3.2.0'
+  gem 'rspec-rails', '~> 3.5.1'
 end
 
 group :development do
@@ -31,7 +32,6 @@ end
 group :test do
   gem 'cucumber-rails', '~> 1.4.4', require: false
   gem 'database_cleaner', '~> 1.5.3'
-  gem 'rspec-rails', '~> 3.5.1'
   gem 'shoulda-matchers', '~> 3.1.1'
 end
 

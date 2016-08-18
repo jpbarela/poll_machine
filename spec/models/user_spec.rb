@@ -16,4 +16,7 @@ RSpec.describe User do
 
   # Active Model
   it { is_expected.to have_secure_password }
+
+  # Associations
+  it { is_expected.to have_many :polls }
 end

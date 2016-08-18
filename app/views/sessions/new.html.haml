@@ -1,13 +1,17 @@
-.small-12.medium-8.medium-offset-2
-  - if flash[:alert]
-    .callout.alert
-      %ul
-        - flash[:alert].each do |message|
-          %li=message
-  = form_for @user, url: sessions_path do |user_form|
-    = user_form.label 'Email'
-    = user_form.email_field :email, required: true
-    = user_form.label 'Password'
-    = user_form.password_field :password, required: true
-    = user_form.submit 'Login!', class: 'button', id: 'login-submit'
-    
+.row
+  .small-12.columns
+    %h1 Enter Your Login Information
+
+.row
+  .small-12.medium-8.medium-offset-2.columns
+    - if flash[:alert]
+      .callout.alert
+        %ul
+          - flash[:alert].each do |message|
+            %li= message
+    = form_for @user, url: sessions_path do |user_form|
+      = user_form.label 'Email'
+      = user_form.email_field :email, required: true
+      = user_form.label 'Password'
+      = user_form.password_field :password, required: true
+      = user_form.submit 'Login!', class: 'button', id: 'login-submit'
