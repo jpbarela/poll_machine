@@ -1,14 +1,14 @@
 !!! 5
-%html{ :lang => "en" }
+%html{ lang: 'en' }
   %head
-    %meta{ :charset => "utf-8" }
+    %meta{ charset: 'utf-8' }
 
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 
     %title= content_for?(:title) ? yield(:title) : 'Poll Machine'
 
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tag
 
   %body
@@ -20,8 +20,8 @@
           = link_to 'Logout', logout_path
       - else
         .small-2.small-offset-7.medium-2.medium-offset-8.columns
-          =link_to 'Sign Up!', new_user_path
+          = link_to 'Sign Up!', new_user_path
         .small-2.medium-2.columns
-          =link_to 'Login', new_session_path
+          = link_to 'Login', new_session_path
 
     = yield

@@ -4,7 +4,7 @@
       .callout.alert
         %ul
           - flash[:alert].each do |message|
-            %li=message
+            %li= message
     = form_for @user do |user_form|
       = user_form.label 'Email'
       = user_form.email_field :email, required: true
