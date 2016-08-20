@@ -4,9 +4,11 @@ class PollsController < ApplicationController
   def create
     @poll = Poll.new poll_params
     params[:questions].each_with_index do |question, index|
-      question = @poll.questions.build text: question[:text]
-      params["choices#{index+1}"].each do |choice|
-        question.choices.build value: choice[:value]
+      unless question[:text].blank?
+        question = @poll.questions.build text: question[:text]
+        params["choices#{index+1}"].each do |choice|
+          question.choices.build value: choice[:value]
+        end
       end
     end
 
