@@ -1,0 +1,21 @@
+.row
+  %h1 Make a New Poll!
+
+= form_for @poll do |poll_form|
+  .row
+    .small-8.small-offset-2.columns
+      = poll_form.label :name
+      = poll_form.text_field :name, required: true
+
+      %ul
+        %li
+          = label_tag 'Poll Question 1'
+          = text_field_tag 'questions[][text]', '', 'data-question' => 1
+
+          %ul
+            %li
+              = text_field_tag 'choices_1[][value]', '', placeholder: 'Answer 1', 'data-choice-1' => 1
+
+  .row
+    .small-8.small-offset-2.columns
+      = poll_form.submit 'Make my poll!', class: 'button', id: 'poll-create'

@@ -19,6 +19,12 @@ RSpec.describe SessionsHelper do
     end
   end
 
+  describe '#current_user_path' do
+    it 'returns the path of the current user' do
+      expect(current_user_path).to eq user_path 4242
+    end
+  end
+
   describe '#log_in' do
     let(:user) { FactoryGirl.create :user }
 

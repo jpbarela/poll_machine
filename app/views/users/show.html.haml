@@ -1,4 +1,4 @@
 .row
   %h1 Welcome #{@user.first_name}!
   %h2
-    Let's create some polls!
+    = link_to "Let's create some polls!", new_poll_path
