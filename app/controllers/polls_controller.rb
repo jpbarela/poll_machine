@@ -6,8 +6,8 @@ class PollsController < ApplicationController
     params[:questions].each_with_index do |question, index|
       unless question[:text].blank?
         question = @poll.questions.build text: question[:text]
-        params["choices#{index+1}"].each do |choice|
-          question.choices.build value: choice[:value]
+        params["choices_#{index+1}"].each do |choice|
+          question.choices.build value: choice[:value] unless choice[:value].blank?
         end
       end
     end
