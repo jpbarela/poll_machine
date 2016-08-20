@@ -1,7 +1,3 @@
-Given(/^I have created a new poll$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When(/^I fill out the new poll form$/) do
   fill_in 'poll_name', with: 'Rate my Poll'
   find('input[data-question="1"]').set("How's my poll?")
@@ -9,7 +5,11 @@ When(/^I fill out the new poll form$/) do
 end
 
 When(/^I add a new question to the poll$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'poll_name', with: 'Rate my Poll'
+  find('input[data-question="1"]').set("How's my poll?")
+  find('input[data-choice-1="1"]').set("It's great!")
+  find('input[data-question="2"]').set("Should I add more questions?")
+  find('input[data-choice-2="1"]').set("Yes")
 end
 
 When(/^I fill out the poll$/) do
@@ -36,4 +36,12 @@ Then(/^My answers should be recorded$/) do
   expect(created_response.choices.size).to be @poll.questions.size
   choice_array = @poll.questions.map { |question| question.choices.last }
   expect(created_response.choices.to_a).to match_array choice_array
+end
+
+Then(/^The poll should have (\d+) questions$/) do |questions|
+  expect(Poll.last.questions.size).to be questions.to_i
+end
+
+Then(/^The question should have (\d+) choices$/) do |choices|
+  pending # Write code here that turns the phrase above into concrete actions
 end
