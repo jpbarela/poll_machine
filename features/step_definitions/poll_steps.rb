@@ -1,20 +1,14 @@
-When(/^I fill out the new poll form$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^A new poll should be created$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given(/^I have created a new poll$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I add a new question to the poll$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I fill out the new poll form$/) do
+  fill_in 'poll_name', with: 'Rate my Poll'
+  find('input[data-question="1"]').set("How's my poll?")
+  find('input[data-choice-1="1"]').set("It's great!")
 end
 
-Then(/^The question is added to the poll$/) do
+When(/^I add a new question to the poll$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
@@ -22,6 +16,18 @@ When(/^I fill out the poll$/) do
   @poll.questions.each do |question|
     choose "question_#{question.id}_#{question.choices.last.id}"
   end
+end
+
+When(/^I add a new choice to a question$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^A new poll should be created$/) do
+  expect { click_button('poll-create') }.to change { Poll.count }.by(1)
+end
+
+Then(/^The question is added to the poll$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^My answers should be recorded$/) do
