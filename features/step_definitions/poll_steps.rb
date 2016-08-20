@@ -19,15 +19,14 @@ When(/^I fill out the poll$/) do
 end
 
 When(/^I add a new choice to a question$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'poll_name', with: 'Rate my Poll'
+  find('input[data-question="1"]').set("How's my poll?")
+  find('input[data-choice-1="1"]').set("It's great!")
+  find('input[data-choice-1="2"]').set("Not so great")
 end
 
 Then(/^A new poll should be created$/) do
   expect { click_button('poll-create') }.to change { Poll.count }.by(1)
-end
-
-Then(/^The question is added to the poll$/) do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^My answers should be recorded$/) do
@@ -43,5 +42,5 @@ Then(/^The poll should have (\d+) questions$/) do |questions|
 end
 
 Then(/^The question should have (\d+) choices$/) do |choices|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(Poll.last.questions.first.choices.size).to be choices.to_i
 end
