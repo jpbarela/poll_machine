@@ -33,6 +33,7 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0.13'
   gem 'cucumber-rails', '~> 1.4.4', require: false
   gem 'database_cleaner', '~> 1.5.3'
+  gem 'poltergeist', '~> 1.10.0'
   gem 'shoulda-matchers', '~> 3.1.1'
 end
 
