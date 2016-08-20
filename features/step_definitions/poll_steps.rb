@@ -8,8 +8,8 @@ When(/^I add a new question to the poll$/) do
   fill_in 'poll_name', with: 'Rate my Poll'
   find('input[data-question="1"]').set("How's my poll?")
   find('input[data-choice-1="1"]').set("It's great!")
-  find('input[data-question="2"]').set("Should I add more questions?")
-  find('input[data-choice-2="1"]').set("Yes")
+  find('input[data-question="2"]').set('Should I add more questions?')
+  find('input[data-choice-2="1"]').set('Yes')
 end
 
 When(/^I fill out the poll$/) do
@@ -22,7 +22,7 @@ When(/^I add a new choice to a question$/) do
   fill_in 'poll_name', with: 'Rate my Poll'
   find('input[data-question="1"]').set("How's my poll?")
   find('input[data-choice-1="1"]').set("It's great!")
-  find('input[data-choice-1="2"]').set("Not so great")
+  find('input[data-choice-1="2"]').set('Not so great')
 end
 
 Then(/^A new poll should be created$/) do
