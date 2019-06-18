@@ -18,3 +18,5 @@
 
 # Ignore actual .env file
 .env
+
+.idea/

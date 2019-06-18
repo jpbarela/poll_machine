@@ -23,7 +23,7 @@ end
 group :development do
   gem 'haml_lint', '~> 0.18.1'
   gem 'listen', '~> 3.0.5'
-  gem 'rubocop', '~> 0.42.0'
+  gem 'rubocop', '~> 0.49.0'
   gem 'spring', '~> 1.7.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '~> 3.3.1'
@@ -37,4 +37,4 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1.1'
 end
 
-ruby '2.2.5'
+ruby '2.6.3'
